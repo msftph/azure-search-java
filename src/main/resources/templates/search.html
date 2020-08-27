@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="https://www.thymeleaf.org" 
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+lang="en">
+    <head>
+        <title>Spring Boot Azure</title>
+        
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Search</h1>
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <select name="index" id="indexes" >
+                        <option  th:each="index: ${indexes}" th:value="${index.name}" th:text="${index.name}"></option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input id="search" type="text" onkeypress="onKeyPressed(event)" style="width:100%"/>
+                </div>
+                <div class="col-md-2">
+                    <input id="submit" type="button" onclick="onClicked(event)" value="Search">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div id="response" class="col-md-19">
+                </div>
+            </div>
+        </div>
+                
+        
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+
+            function onKeyPressed(e){                
+                if(e.keyCode == 13){
+                    onClicked(null);
+                }
+            }
+
+            function onClicked(e){                
+                var searchTextBox = document.getElementById("search");
+                if(!searchTextBox.value || searchTextBox.value.trim().length == 0){                                        
+                    return;
+                }  
+                
+                var indexDropDown = document.getElementById("indexes");
+                if(!indexDropDown.value || indexDropDown.value.trim().length == 0){                                        
+                    return;
+                }  
+                
+                var text = searchTextBox.value;
+                var index = indexDropDown.value;                
+                search(text, index);
+            }
+
+            function search(text, index){
+                var http = new XMLHttpRequest();
+                http.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        var response = document.getElementById("response");
+                        response.innerHTML = "";
+
+                        var json = JSON.parse(http.responseText);                       
+
+                        var element = createElement(json);
+                        response.appendChild(element);
+                    }
+                };
+                http.open("POST", "/search", true);
+                http.setRequestHeader("Content-type","application/x-www-form-urlencoded");                
+                
+                var body = new URLSearchParams({
+                    "text": text,
+                    "index": index,
+                });
+
+                http.send(body);
+            }
+
+            function createElement(item){
+                switch(item.type){
+                    case "Edm.String":
+                        var dd = document.createElement("dd");
+                        dd.innerText = item.value;
+                        return dd;
+
+                    case "Edm.Boolean":
+                        break;
+
+                    case "Edm.Int32":
+                        var dd = document.createElement("dd");
+                        dd.innerText = item.value;
+                        return dd;
+
+                    case "Edm.Int64":
+                        break;
+
+                    case "Edm.Double":
+                        break;
+
+                    case "Edm.DateTimeOffset":
+                        break;
+
+                    case "Edm.GeographyPoint":
+                        break;
+
+                    case "Edm.ComplexType":
+                        break;
+
+                    case "Collection(Edm.String)":
+                        var ul = document.createElement('ul');
+                        for(var i=0;i<item.items.length;i++){
+                            var child = item.items[i];
+                            var li = document.createElement('li');
+                            li.innerText = child.value;
+                            ul.appendChild(li);
+                        }
+                        var dd = document.createElement("dd");
+                        dd.appendChild(ul);
+                        return dd;
+
+                    case "Collection(Edm.Boolean)":
+                        break;
+
+                    case "Collection(Edm.Int32)":
+                        break;
+
+                    case "Collection(Edm.Int64)":
+                        break;
+
+                    case "Collection(Edm.Double)":
+                        break;
+
+                    case "Collection(Edm.DateTimeOffset)":
+                        break;
+
+                    case "Collection(Edm.GeographyPoint)":
+                        break;
+
+                    case "Collection(Edm.ComplexType)":
+                        break;
+
+                    default:                        
+                        var dl = document.createElement("dl");
+                        dl.setAttribute('class', 'row');
+                        if(!item.items){                        
+                            return dl;    
+                        }
+                        for(var i=0;i<item.items.length;i++){
+                            var child = item.items[i];                            
+
+                            var dt = document.createElement('dt');
+                            dt.setAttribute('class', 'col-sm-3');
+                            if(child.name)
+                                dt.innerText = child.name;
+                            dl.appendChild(dt);
+
+                            var dd = createElement(child);
+                            dd.setAttribute('class', 'col-sm-9');
+                            dl.appendChild(dd);
+                        }
+                        return dl;
+                }
+                return document.createElement("div");
+            }
+        </script>
+    </body>    
+</html>
