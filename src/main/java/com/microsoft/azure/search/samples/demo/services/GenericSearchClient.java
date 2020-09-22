@@ -1,60 +1,37 @@
 package com.microsoft.azure.search.samples.demo.services;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import java.net.http.HttpResponse;
 import java.util.*;
 import com.microsoft.azure.search.samples.demo.models.*;
 import org.json.*;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SearchServiceClient extends SearchClient {
+public class GenericSearchClient extends SearchClient {
     
     private IndexServiceClient indexServiceClient;
 
-    public SearchServiceClient(SearchClientContext context, IndexServiceClient indexServiceClient) {
+    public GenericSearchClient(SearchClientContext context, IndexServiceClient indexServiceClient) {
         super(context);   
         if(indexServiceClient ==  null)
             throw new IllegalArgumentException("indexServiceClient is null");     
         this.indexServiceClient = indexServiceClient;        
     }
 
-    public SearchResult search(String indexName, String text) throws IOException, InterruptedException{        
-        try (var formatter = new Formatter()) {
-            String url = formatter.format("https://%s.search.windows.net/indexes/%s/docs?api-version=%s&search=%s",
-                    context.getServiceName(), 
-                    indexName,                     
-                    context.getApiVersion(),
-                    text)
-                .out()
-                .toString();
-            
-            // create the api request    
-            var uri = URI.create(url);
-            var apiRequest = createHttpRequest(uri, context.getApiKey(), "GET", null);
+    public SearchResult<SearchItem> search(String indexName, String text) throws IOException, InterruptedException{        
+        var jsonObject = searchRaw(indexName, text);
+        var values = jsonObject.getJSONArray("value");
 
-            // extract the api response
-            var apiResponse = client.send(apiRequest, HttpResponse.BodyHandlers.ofString());
+        // get the fields for the index
+        var index = indexServiceClient.get(indexName);
 
-            if(apiResponse.statusCode() != HttpURLConnection.HTTP_OK)
-                throw new IOException(
-                    String.format("Expected http response 200, found %s", apiResponse.statusCode()));
-
-            var jsonObject = new JSONObject(apiResponse.body());
-            var values = jsonObject.getJSONArray("value");
-
-            // get the fields for the index
-            var index = indexServiceClient.get(indexName);
-
-            // map the fields and values into a search item list
-            var items = mapSearchItemList(index.getFields(), values);
-            
-            var result = new SearchResult();
-            result.setItems(items);
-            return result;
-        }
+        // map the fields and values into a search item list
+        var items = mapSearchItemList(index.getFields(), values);
+        
+        var result = new SearchResult<SearchItem>();
+        result.setItems(items);
+        return result;
+        
     }
 
     private static List<SearchItem> mapSearchItemList(List<Field> fields, JSONArray array){

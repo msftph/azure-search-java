@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Search Hotels</title>
+</head>
+<body>
+    <div th:fragment="results">
+        <ul>
+            <li class="row" th:each="result: ${results.getItems()}">
+                <article>
+                    <section>
+                        <h3 th:text="${result.name}"></h3>
+                        <address>
+                            <span th:text="${result.address.street}"></span>
+                        </address>
+                        <figure>
+                            <a>
+                                <image src="https://via.placeholder.com/250x140"></image>
+                            </a>
+                        </figure>
+                    </section>
+                </article>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

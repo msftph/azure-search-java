@@ -1,0 +1,300 @@
+{
+    "@odata.context": "https://walgreens-azure-search.search.windows.net/indexes('realestate-us-sample-index')/$metadata#docs(*)",
+    "value": [
+        {
+            "@search.score": 1.0539877,
+            "listingId": "OTM4NTQ5Ng2",
+            "beds": 5,
+            "baths": 5,
+            "description": "This is a flatlet but has a small mouse problem.This property has lake access located in a no through road and features miele appliances, crown mouldings and a large walk in closet.",
+            "description_de": "Dies ist ein Allergiker aber hat eine kleine Maus Problem.Diese Eigenschaft hat Zugang zum See Das Hotel liegt in einer Sackgasse und Funktionen Miele Geräte, Krone Formteile and einen großen begehbaren Kleiderschrank.",
+            "description_fr": "Il s’agit d’un appartement mais a un problème de petite souris.Cette propriété n’a accès au lac situé dans un non par route et caractéristiques miele appareils, moulures and une grande promenade dans le placard.",
+            "description_it": "Si tratta di una casetta ma ha un problema piccolo topo.Questa proprietà ha accesso diretto al lago Situato in un no attraverso strada ed elettrodomestici miele caratteristiche, modanature corona and una grande cabina armadio.",
+            "description_es": "Se trata de un flatlet pero tiene un problema de ratón pequeño.Esta propiedad tiene acceso lago situado en un no a través de la carretera y características miele electrodomésticos, moldeados de corona and un gran paseo en el armario.",
+            "description_pl": "Jest to mieszkanie ale ma problem male myszy.Ten obiekt ma dostep do jeziora polozony w nie poprzez drogi i funkcje urzadzen miele, sztukaterie and duzych odleglosci w szafie.",
+            "description_nl": "Dit is een flatlet maar heeft een kleine muis probleem.Deze eigenschap heeft meer toegang gelegen in een niet door weg en functies miele apparaten, kroon lijstwerk and een grote inloopkast.",
+            "sqft": 16200,
+            "daysOnMarket": 186,
+            "status": "active",
+            "source": "Lucas Morris Realtors",
+            "number": "2105",
+            "street": "North 90th Street",
+            "unit": "490",
+            "type": "Apartment",
+            "city": "Seattle",
+            "region": "wa",
+            "countryCode": "us",
+            "postCode": "98103",
+            "location": {
+                "type": "Point",
+                "coordinates": [
+                    -122.334,
+                    47.6936
+                ],
+                "crs": {
+                    "type": "name",
+                    "properties": {
+                        "name": "EPSG:4326"
+                    }
+                }
+            },
+            "price": 3402000,
+            "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd5bt5apt.jpg",
+            "tags": [
+                "flatlet",
+                "mouse problem",
+                "lake access",
+                "no through road",
+                "miele appliances",
+                "crown mouldings",
+                "large walk in closet"
+            ]
+        },
+        {
+            "@search.score": 1.0539877,
+            "listingId": "OTM4NTQ1OA2",
+            "beds": 4,
+            "baths": 4,
+            "description": "This is a semi-detached house and is move-in ready.  This home provides panoramic views located close to shopping and features a steam room, beautiful bedroom floors and a large walk in closet.",
+            "description_de": "Dies ist eine Doppelhaushälfte und Einzug bereit.  Dieses Haus bietet einen Panoramablick auf Das Hotel liegt nahe an den Geschäften und verfügt über ein Dampfbad schöne Zimmer-Etagen and einen großen begehbaren Kleiderschrank.",
+            "description_fr": "Il s’agit d’une maison jumelée et est prête à se déplacer en.  Cette maison offre une vue panoramique Situé à proximité des commerces et dispose d’un bain de vapeur, planchers de belle chambre and une grande promenade dans le placard.",
+            "description_it": "Si tratta di una casa bifamiliare e si muovono in pronto.  Questa casa offre una vista panoramica Situato vicino a negozi e dispone di una sala di vapore, piani di bella camera da letto and una grande cabina armadio.",
+            "description_es": "Esta es una casa adosada y está lista para la mudanza.  Esta casa ofrece vistas panorámicas situado cerca de tiendas y cuenta con una sala de vapor, pisos de dormitorio hermoso and un gran paseo en el armario.",
+            "description_pl": "Jest to dom-blizniak i jest gotowy do przeprowadzki.  Ten dom zapewnia panoramiczne widoki na polozony w poblizu zakupy i oferuje laznie parowa, piekna sypialnia podlogi and duzych odleglosci w szafie.",
+            "description_nl": "Dit is een semi-vrijstaande woning en bewegen-in klaar is.  Dit huis biedt een panoramisch uitzicht vlakbij winkels en beschikt over een stoombad, mooie slaapkamer vloeren and een grote inloopkast.",
+            "sqft": 10368,
+            "daysOnMarket": 258,
+            "status": "active",
+            "source": "Hernandez Homes",
+            "number": "6554",
+            "street": "5th Place South",
+            "unit": null,
+            "type": "House",
+            "city": "Seattle",
+            "region": "wa",
+            "countryCode": "us",
+            "postCode": "98108",
+            "location": {
+                "type": "Point",
+                "coordinates": [
+                    -122.327,
+                    47.5444
+                ],
+                "crs": {
+                    "type": "name",
+                    "properties": {
+                        "name": "EPSG:4326"
+                    }
+                }
+            },
+            "price": 2820096,
+            "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd4bt4home.jpg",
+            "tags": [
+                "semi-detached house",
+                "move-in ready",
+                "panoramic views",
+                "shopping",
+                "steam room",
+                "beautiful bedroom floors",
+                "large walk in closet"
+            ]
+        },
+        {
+            "@search.score": 1.0539877,
+            "listingId": "OTM4MjI5Mw2",
+            "beds": 2,
+            "baths": 2,
+            "description": "This is a flatlet and is priced to sell.  This home provides panoramic views located near a small lake and features sub-zero appliances, beautiful bedroom floors and lots of storage.",
+            "description_de": "Dies ist ein Allergiker und ist preislich um zu verkaufen.  Dieses Haus bietet einen Panoramablick auf ein kleiner See in der Nähe und Funktionen sub-Zero-Geräte, schöne Zimmer-Etagen and viel Stauraum.",
+            "description_fr": "Il s’agit d’un appartement un prix pour vendre.  Cette maison offre une vue panoramique Situé à proximité d’un petit lac et appareils caractéristiques Sub-zero, planchers de belle chambre and beaucoup de rangement.",
+            "description_it": "Si tratta di una casetta ed è un prezzo di vendita.  Questa casa offre una vista panoramica Situato vicino a un laghetto ed elettrodomestici caratteristiche sub-zero, piani di bella camera da letto and sacco di stoccaggio.",
+            "description_es": "Se trata de un flatlet y tiene un precio para vender.  Esta casa ofrece vistas panorámicas situado cerca de un lago pequeño y aparatos de características sub-zero, pisos de dormitorio hermoso and montón de almacenamiento.",
+            "description_pl": "Jest to mieszkanie i jest w cenie sprzedazy.  Ten dom zapewnia panoramiczne widoki na znajdujace sie w poblizu niewielkiego jeziora i funkcje Sub-Zero urzadzen, piekna sypialnia podlogi and mnóstwo miejsca do przechowywania.",
+            "description_nl": "Dit is een flatlet zijn en wordt geprijst om te verkopen.  Dit huis biedt een panoramisch uitzicht gelegen in de buurt van een meertje en functies Sub-Zero apparaten, mooie slaapkamer vloeren and veel opslag.",
+            "sqft": 2592,
+            "daysOnMarket": 222,
+            "status": "active",
+            "source": "Price Realty",
+            "number": "2203",
+            "street": "North 40th Street",
+            "unit": "539",
+            "type": "Apartment",
+            "city": "Seattle",
+            "region": "wa",
+            "countryCode": "us",
+            "postCode": "98103",
+            "location": {
+                "type": "Point",
+                "coordinates": [
+                    -122.332,
+                    47.6554
+                ],
+                "crs": {
+                    "type": "name",
+                    "properties": {
+                        "name": "EPSG:4326"
+                    }
+                }
+            },
+            "price": 570240,
+            "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd2bt2apt.jpg",
+            "tags": [
+                "flatlet",
+                "priced to sell",
+                "panoramic views",
+                "small lake",
+                "sub-zero appliances",
+                "beautiful bedroom floors",
+                "lots of storage"
+            ]
+        },
+        {
+            "@search.score": 1.0539877,
+            "listingId": "OTM4MjMyOA2",
+            "beds": 4,
+            "baths": 4,
+            "description": "This is a tenement house and is brand new.  This home provides lakefront property located in a dead end road and features a heated pool, a garden and vaulted ceilings.",
+            "description_de": "Dies ist ein Mietshaus und ist die Marke neu.  Dieses Haus bietet Seeliegenschaft Das Hotel liegt in einer Sackgasse und verfügt über einen beheizten Swimmingpool, einen Garten and Gewölbedecken.",
+            "description_fr": "Il s’agit d’une maison de tenement et est la marque nouvelle.  Cette maison offre propriété au bord du lac situé dans une rue sans issue et dispose d’une piscine chauffée, un jardin and plafonds voûtés.",
+            "description_it": "Si tratta di un caseggiato ed è il marchio nuovo.  Questa casa fornisce proprietà lungolago Situato in una strada senza uscita e vanta una piscina riscaldata, un giardino and soffitti a volta.",
+            "description_es": "Se trata de una casa y es marca nueva.  Esta casa ofrece propiedad de lago encuentra en un callejón sin salida y cuenta con una piscina climatizada, un jardín and techos abovedados.",
+            "description_pl": "Jest to kamienica i to nowa marka.  Ten dom zapewnia lakefront Wlasciwosc polozony przy ulicy zaulek i dysponuje basenem z podgrzewana woda, ogród and sklepienie.",
+            "description_nl": "Dit is een huurkazerne-huis en is het merk nieuwe.  Dit huis biedt lakefront eigenschap gelegen in een doodlopende weg en beschikt over een verwarmd zwembad, een tuin and gewelfde plafonds.",
+            "sqft": 10368,
+            "daysOnMarket": 198,
+            "status": "active",
+            "source": "Lemieux Realty",
+            "number": "311",
+            "street": "Northeast 57th Street",
+            "unit": null,
+            "type": "House",
+            "city": "Seattle",
+            "region": "wa",
+            "countryCode": "us",
+            "postCode": "98105",
+            "location": {
+                "type": "Point",
+                "coordinates": [
+                    -122.325,
+                    47.6698
+                ],
+                "crs": {
+                    "type": "name",
+                    "properties": {
+                        "name": "EPSG:4326"
+                    }
+                }
+            },
+            "price": 2249856,
+            "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd4bt4home.jpg",
+            "tags": [
+                "tenement house",
+                "brand new",
+                "lakefront property",
+                "dead end road",
+                "heated pool",
+                "garden",
+                "vaulted ceilings"
+            ]
+        },
+        {
+            "@search.score": 1.0539877,
+            "listingId": "OTM4MjE0MQ2",
+            "beds": 1,
+            "baths": 1,
+            "description": "This is a duplex residence and is move in condition.  Enjoy water frontage located on a no outlet and features a sauna, a garden and granite countertops.",
+            "description_de": "Dies ist eine Maisonette Residenz und ist in einem Zustand zu bewegen.  Genießen Sie Wasser Fassade Das Hotel liegt auf einem keine Steckdose und verfügt über eine Sauna, einen Garten and Granit-Arbeitsplatten.",
+            "description_fr": "Il s’agit d’une résidence duplex et y se déplacer en état.  Profitez de façade de l’eau Situé sur une aucune prise et dispose d’un sauna, un jardin and comptoirs de granit.",
+            "description_it": "Si tratta di un residence di fronte/retro ed è muoversi in condizione.  Godere di Riva d'acqua Situato su una non presa e dispone di sauna, un giardino and ripiani di granito.",
+            "description_es": "Se trata de una residencia de dos caras y moverse en condiciones.  Disfrutar de frente de agua situado en una sin salida y cuenta con una sauna, un jardín and encimeras de granito.",
+            "description_pl": "Jest to dwupoziomowy residence i jest w stanie przeniesc.  Ciesz sie wody pierzei znajduje sie na nie gniazda i dysponuje sauna, ogród and blaty granitowe.",
+            "description_nl": "Dit is een duplex woning en verplaatsen in conditie.  Genieten van water voorgevel gelegen op een geen stopcontact en is voorzien van een sauna, een tuin and countertops van het graniet.",
+            "sqft": 648,
+            "daysOnMarket": 132,
+            "status": "active",
+            "source": "Roy Realtors",
+            "number": "409",
+            "street": "North Bowdoin Place",
+            "unit": null,
+            "type": "House",
+            "city": "Seattle",
+            "region": "wa",
+            "countryCode": "us",
+            "postCode": "98103",
+            "location": {
+                "type": "Point",
+                "coordinates": [
+                    -122.354,
+                    47.6545
+                ],
+                "crs": {
+                    "type": "name",
+                    "properties": {
+                        "name": "EPSG:4326"
+                    }
+                }
+            },
+            "price": 156168,
+            "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd1bt1home.jpg",
+            "tags": [
+                "duplex residence",
+                "move in condition",
+                "water frontage",
+                "no outlet",
+                "sauna",
+                "garden",
+                "granite countertops"
+            ]
+        },
+        {
+            "@search.score": 1.0539877,
+            "listingId": "OTM4MjE1NQ2",
+            "beds": 3,
+            "baths": 2,
+            "description": "This is a condo and is freshly painted.  This property has lake access located close to a river and features a swimming pool, heated towel racks and lots of storage.",
+            "description_de": "Dies ist eine Eigentumswohnung und ist frisch gestrichen.  Diese Eigenschaft hat Zugang zum See Das Hotel liegt in der Nähe eines Flusses und verfügt über einen Swimmingpool, beheizte Handtuchhalter and viel Stauraum.",
+            "description_fr": "Il s’agit d’un condo et est fraîchement peint.  Cette propriété n’a accès au lac Situé à proximité d’une rivière et dispose d’une piscine, porte-serviette chauffant and beaucoup de rangement.",
+            "description_it": "Si tratta di un condominio ed è dipinta di fresco.  Questa proprietà ha accesso diretto al lago Situato vicino a un fiume e offre una piscina, portasciugamani riscaldati and sacco di stoccaggio.",
+            "description_es": "Se trata de un condominio y está recién pintado.  Esta propiedad tiene acceso lago situado cerca de un río y cuenta con una piscina, calefacción toalleros and montón de almacenamiento.",
+            "description_pl": "Jest to domek i jest swiezo malowane.  Ten obiekt ma dostep do jeziora polozony w poblizu rzeki i dysponuje basenem, podgrzewanym wieszakiem and mnóstwo miejsca do przechowywania.",
+            "description_nl": "Dit is een condo en vers is geschilderd.  Deze eigenschap heeft meer toegang vlakbij een rivier en is voorzien van een zwembad, verwarmde handdoekrekken and veel opslag.",
+            "sqft": 3888,
+            "daysOnMarket": 285,
+            "status": "active",
+            "source": "Rousseau Realtors",
+            "number": "803",
+            "street": "24th Avenue South",
+            "unit": "623",
+            "type": "Apartment",
+            "city": "Seattle",
+            "region": "wa",
+            "countryCode": "us",
+            "postCode": "98144",
+            "location": {
+                "type": "Point",
+                "coordinates": [
+                    -122.301,
+                    47.5954
+                ],
+                "crs": {
+                    "type": "name",
+                    "properties": {
+                        "name": "EPSG:4326"
+                    }
+                }
+            },
+            "price": 1084752,
+            "thumbnail": "https://searchdatasets.blob.core.windows.net/images/bd3bt2apt.jpg",
+            "tags": [
+                "condo",
+                "freshly painted",
+                "lake access",
+                "river",
+                "swimming pool",
+                "heated towel racks",
+                "lots of storage"
+            ]
+        }        
+    ],
+    "@odata.nextLink": "https://walgreens-azure-search.search.windows.net/indexes('realestate-us-sample-index')/docs?api-version=2020-06-30&search=seattle&$skip=50"
+}

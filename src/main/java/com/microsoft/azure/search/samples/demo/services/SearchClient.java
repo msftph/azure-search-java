@@ -1,8 +1,11 @@
 package com.microsoft.azure.search.samples.demo.services;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
+import java.io.IOException;
+import java.net.*;
+import java.net.http.*;
+import java.util.Formatter;
+
+import org.json.JSONObject;
 
 public class SearchClient {
     protected SearchClientContext context;
@@ -14,6 +17,32 @@ public class SearchClient {
             throw new IllegalArgumentException("context is null");
         this.context = context;
     }
+
+    protected JSONObject searchRaw(String indexName, String text) 
+    throws IOException, InterruptedException{
+    try (var formatter = new Formatter()) {
+        String url = formatter.format("https://%s.search.windows.net/indexes/%s/docs?api-version=%s&search=%s",
+                context.getServiceName(), 
+                indexName,                     
+                context.getApiVersion(),
+                text)
+            .out()
+            .toString();
+        
+        // create the api request    
+        var uri = URI.create(url);
+        var apiRequest = createHttpRequest(uri, context.getApiKey(), "GET", null);
+
+        // extract the api response
+        var apiResponse = client.send(apiRequest, HttpResponse.BodyHandlers.ofString());
+
+        if(apiResponse.statusCode() != HttpURLConnection.HTTP_OK)
+            throw new IOException(
+                String.format("Expected http response 200, found %s", apiResponse.statusCode()));
+
+        return new JSONObject(apiResponse.body());
+    }
+}
 
     protected HttpRequest createHttpRequest(URI uri, String key, String method, String contents) {
         contents = contents == null ? "" : contents;

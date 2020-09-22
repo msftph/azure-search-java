@@ -1,6 +1,6 @@
 package com.microsoft.azure.search.samples.demo.models;
 
-public class SearchPostModel {
+public class SearchData {
     private String text;
     private String index;
 

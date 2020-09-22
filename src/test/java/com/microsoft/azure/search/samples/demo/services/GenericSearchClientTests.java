@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest(classes = DemoApplication.class)
-public class SearchServiceClientTests {
+public class GenericSearchClientTests {
 
     @Autowired
-    SearchServiceClient client;
+    GenericSearchClient client;
 
     @Test
 	void canGetResults() throws Exception{

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Search Real Estate</title>
+</head>
+<body>
+    <div th:fragment="results">
+        <ul>
+            <li class="row" th:each="result: ${results.getItems()}">
+                <article class="list-card">                    
+                    <div class="list-card-info">
+                        <a href="#"> 
+                            <address class="list-card-address">
+                                <span th:text="${result.address.street}"></span>
+                            </address>
+                        </a>
+                        <div class="list-card-footer"></div>
+                        <div class="list-card-heading">
+                            <div class="list-card-price" th:inline="text">
+                                $[[${#numbers.formatDecimal(result.price, 0, 'COMMA', 0, 'POINT')}]]
+                            </div>
+                            <ul class="list-card-details">
+                                <li th:inline="text">
+                                    [[${result.beds}]]
+                                    <abbr class="list-card-label">bds</abbr>
+                                </li>
+                                <li th:inline="text" >
+                                    [[${result.baths}]]
+                                    <abbr class="list-card-label">ba</abbr>
+                                </li>
+                                <li th:inline="text">
+                                    [[${result.squareFeet}]]
+                                    <abbr class="list-card-label">sqft</abbr>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="list-card-top">
+                        <a class="list-card-link" href="#">
+                            <img class="" th:src="${result.thumbnail}" height="140px" width="300px" th:alt="${result.address.street}"/>
+                        </a>
+                    </div>                    
+                </article>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

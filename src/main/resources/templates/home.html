@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-xmlns:th="https://www.thymeleaf.org" 
-xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-lang="en">
-    <head>
-        <title>Spring Boot Azure</title>
-    </head>
-    <body>
-        <h1>Welcome!</h1>
-        
-    </body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Welcome to Our Site</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <section class="my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Welcome to Our Site</h1>
+                    <p><a href="/search">Search Now!</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+</body>
 </html>
